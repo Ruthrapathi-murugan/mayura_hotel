@@ -56,7 +56,7 @@ const Footer = ({ onBookNow }) => {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={18} className="text-primary flex-shrink-0" />
-                <span>+91 097511 10801</span>
+                <span>+91 97511 10801</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-primary flex-shrink-0" />

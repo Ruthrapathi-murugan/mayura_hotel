@@ -27,12 +27,7 @@ const Hero = ({ onBookNow }) => {
       subtitle: 'Spacious & Clean Accommodations',
       description: 'Well-maintained rooms designed for the modern traveler, ensuring a restful night after your temple visit.',
     },
-    {
-      image: restaurantImg,
-      title: 'Exquisite Dining',
-      subtitle: 'In-house Restaurant for Pure Comfort',
-      description: 'Savor delicious local and multi-cuisine dishes prepared with care in our pristine dining area.',
-    },
+
   ];
 
   return (
