@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-[#1f2937];
+  }
+}
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+}
+
+/* Custom theme colors for tailwind v4 */
+@theme {
+  --color-primary-light: #fde68a;
+  --color-primary: #d97706;
+  --color-primary-dark: #92400e;
+  --color-secondary-light: #f3f4f6;
+  --color-secondary: #4b5563;
+  --color-secondary-dark: #1f2937;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+[id] {
+  scroll-margin-top: 100px;
+}
+
+section {
+  scroll-margin-top: 5rem;
+}
