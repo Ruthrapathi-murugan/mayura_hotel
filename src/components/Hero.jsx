@@ -11,7 +11,6 @@ import 'swiper/css/effect-fade';
 
 import heroImg from '../assets/hero.jpg';
 import standardImg from '../assets/deluxe.jpg';
-import restaurantImg from '../assets/restaurant.jpg';
 
 const Hero = ({ onBookNow }) => {
   const slides = [

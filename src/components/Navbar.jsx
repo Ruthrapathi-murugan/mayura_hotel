@@ -20,6 +20,7 @@ const Navbar = ({ onBookNow }) => {
   const navLinks = [
     { name: 'Home', path: '/#home' },
     { name: 'Rooms', path: '/rooms' },
+    { name: 'Gallery', path: '/gallery' },
     { name: 'Facilities', path: '/#facilities' },
     { name: 'Location', path: '/#location' },
     { name: 'Contact', path: '/#contact' },

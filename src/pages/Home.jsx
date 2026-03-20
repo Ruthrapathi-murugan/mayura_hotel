@@ -7,7 +7,6 @@ import deluxeImg from '../assets/deluxe.jpg';
 
 import heroImg from '../assets/hero.jpg';
 import standardImg from '../assets/standard.jpg';
-import restaurantImg from '../assets/restaurant.jpg';
 
 const Home = ({ onBookNow }) => {
   const highlights = [
@@ -106,23 +105,47 @@ const Home = ({ onBookNow }) => {
       {/* Gallery Section */}
       <section id="gallery" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-3">Moments at Mayura</p>
-            <h2 className="text-4xl font-serif font-bold text-secondary-dark">Photo Gallery</h2>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="text-left">
+              <p className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-3">Moments at Mayura</p>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-secondary-dark leading-tight">Photo Gallery</h2>
+            </div>
+            <Link 
+              to="/gallery" 
+              className="group flex items-center space-x-3 text-primary font-black uppercase tracking-widest text-sm hover:text-primary-dark transition-colors"
+            >
+              <span>Explore Full Gallery</span>
+              <div className="w-12 h-[2px] bg-primary group-hover:w-20 transition-all duration-500" />
+            </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[heroImg, deluxeImg, standardImg, restaurantImg, heroImg, deluxeImg].map((img, i) => (
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[heroImg, deluxeImg, standardImg].map((img, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: i * 0.1 }}
-                className="relative aspect-square overflow-hidden rounded-2xl group cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] group cursor-pointer shadow-2xl shadow-gray-200"
               >
-                <img src={img} alt="Gallery" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
+                <img src={img} alt="Gallery" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                  <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2 text-primary-light">Featured</p>
+                    <h4 className="text-xl font-serif font-bold italic">Mayura Residency</h4>
+                  </div>
+                </div>
               </motion.div>
             ))}
+          </div>
+          
+          <div className="mt-16 text-center lg:hidden">
+            <Link 
+              to="/gallery" 
+              className="inline-block bg-white border-2 border-primary text-primary px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-primary hover:text-white transition-all shadow-xl shadow-primary/10"
+            >
+              View More Photos
+            </Link>
           </div>
         </div>
       </section>

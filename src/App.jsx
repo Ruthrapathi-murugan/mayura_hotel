@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Rooms from './pages/Rooms';
+import Gallery from './pages/Gallery';
 import WhatsAppButton from './components/WhatsAppButton';
 import BookingModal from './components/BookingModal';
 
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home onBookNow={openBooking} />} />
             <Route path="/rooms" element={<Rooms onBookNow={openBooking} />} />
+            <Route path="/gallery" element={<Gallery onBookNow={openBooking} />} />
           </Routes>
         </main>
         <Footer onBookNow={openBooking} />

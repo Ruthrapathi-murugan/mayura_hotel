@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import { Check, Star, Users, Wind, Map } from 'lucide-react';
 import deluxeImg from '../assets/deluxe.jpg';
 import standardImg from '../assets/standard.jpg';
+import threeBedImg from '../assets/3bed.jpg';
+import fourBedImg from '../assets/4bed.jpg';
+import { Link } from 'react-router-dom';
 
 const Rooms = ({ onBookNow }) => {
   const roomTypes = [
@@ -17,7 +20,7 @@ const Rooms = ({ onBookNow }) => {
     {
       id: 'triple',
       name: 'Triple Bedroom AC',
-      image: deluxeImg, // Repurposing for now
+      image: threeBedImg,
       description: 'Spacious room equipped with three comfortable separate beds, ideal for friends or small families.',
       features: ['Three Single Beds', 'Air Conditioning', 'High-Speed Wi-Fi', 'Satellite LED TV', 'Modern Bathroom'],
       price: 'Comfort for Three',
@@ -26,7 +29,7 @@ const Rooms = ({ onBookNow }) => {
     {
       id: 'quad',
       name: 'Four Bed Room AC',
-      image: standardImg, // This one has two double beds
+      image: fourBedImg,
       description: 'Perfect for larger families or groups, featuring two large double beds for maximum comfort and space.',
       features: ['Two Double Beds', 'Air Conditioning', 'Wi-Fi Access', 'Spacious Interiors', 'Satellite TV', 'Power Backup'],
       price: 'Family Favorite',
@@ -103,7 +106,7 @@ const Rooms = ({ onBookNow }) => {
                   </div>
                 </div>
 
-                <div className="mb-12">
+                <div className="mb-8">
                   <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-6">Room Amenities</h4>
                   <ul className="grid grid-cols-2 gap-y-4">
                     {room.features.map((feature, i) => (
@@ -114,6 +117,14 @@ const Rooms = ({ onBookNow }) => {
                     ))}
                   </ul>
                 </div>
+
+                <Link 
+                  to="/gallery" 
+                  state={{ filter: 'Rooms' }}
+                  className="inline-block text-primary font-bold text-sm mb-10 hover:underline"
+                >
+                  View More Room Photos →
+                </Link>
 
                 <button 
                   onClick={onBookNow}
